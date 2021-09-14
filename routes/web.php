@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,9 +17,9 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::Get('/', function () {
-    echo "Selamat Datang";
-});
+// Route::Get('/', function () {
+//     echo "Selamat Datang";
+// });
 
 Route::Get('/about', function () {
     echo "NIM : 2031710161";
@@ -30,3 +30,5 @@ Route::Get('/about', function () {
 Route::Get('/articles/{id}', function ($id) {
     return $id;
 });
+
+Route::Get('/', [PageController::class, 'index']);
